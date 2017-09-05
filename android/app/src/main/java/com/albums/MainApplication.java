@@ -7,6 +7,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.remobile.splashscreen.RCTSplashScreenPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,6 +23,7 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
+          new RCTSplashScreenPackage(MainActivity.activity, true),
           new MainReactPackage()
       );
     }
@@ -37,4 +39,7 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
   }
+
+
+
 }

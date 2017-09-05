@@ -4,11 +4,16 @@ import { ScrollView } from 'react-native';
 import axios from 'axios';
 import AlbumDetail from './AlbumDetail';
 
+// import SplashScreen
+const SplashScreen = require('@remobile/react-native-splashscreen');
+
 class AlbumList extends Component {
   state = { albums: [] };
 
   //component to get api
   componentWillMount() {
+    //mounting awal dari SplashScreen
+    SplashScreen.hide();
     axios.get('https://rallycoding.herokuapp.com/api/music_albums')
       .then(response => this.setState({ albums: response.data }));
     //console.log('componentWillMount in AlbumList');
